@@ -66,6 +66,10 @@ class Transaction(DeclarativeBase):
 
 
 class TransactionAudit(DeclarativeBase):
+    """
+    Saves all Processed transactions and their account balances
+    """
+
     __tablename__ = "transaction_audit"
 
     id = Column(Integer, primary_key=True)

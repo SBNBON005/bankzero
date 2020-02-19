@@ -44,3 +44,9 @@ $ python3.8 bankzero/process_pending_txs.py
 ```
 $ python3.8 bankzero/generate_report.py
 ```
+
+
+## Approach
+- Have 3 tables Transaction, TransactionAudit and Account (defined in model.py)
+- Transaction tbl should have a status column to indicate if it has been processed or not
+- Store transaction in TransactionAudit once processed and mark it as processed
