@@ -2,7 +2,7 @@ from bankzero.models import Transaction, TransactionAudit, TransactionStatus
 from bankzero.utils import db_session
 from bankzero.controller import process_tx, generate_report
 
-#  This script process pending transactions in the transaction table then generates a csv report
+#  This script process pending transactions in the transaction table
 
 
 def process_pending_txs():
@@ -16,4 +16,3 @@ def process_pending_txs():
 
 if __name__ == "__main__":
     process_pending_txs()
-    generate_report()

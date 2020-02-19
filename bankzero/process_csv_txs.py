@@ -2,10 +2,10 @@ import csv
 
 from bankzero.models import Transaction, TransactionAudit, TransactionStatus
 from bankzero.utils import db_session
-from bankzero.controller import process_tx, generate_report
+from bankzero.controller import process_tx
 
 
-#  This script process transaction given through a csv file then generates a csv report
+#  This script process transaction given through a csv file
 
 
 def process_csv_file():
@@ -49,4 +49,3 @@ def process_csv_file():
 
 if __name__ == "__main__":
     process_csv_file()
-    generate_report()

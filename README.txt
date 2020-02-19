@@ -32,3 +32,8 @@ $ python3.8 bankzero/process_csv_txs.py
 ```
 $ python3.8 bankzero/process_pending_txs.py
 ```
+
+### Generate Report
+```
+$ python3.8 bankzero/generate_report.py
+```
