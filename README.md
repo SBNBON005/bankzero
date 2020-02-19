@@ -15,7 +15,7 @@ Install requirements and building module
 $ pip install -e .
 ```
 
-Create tables and an account in the database:
+Create and initialize tables:
 
 ```
 $ python3.8 bootstrap.py
