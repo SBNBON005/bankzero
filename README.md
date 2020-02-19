@@ -3,6 +3,13 @@
 - Install `Docker`
 - Clone and change directory to bankzero `git@github.com:SBNBON005/bankzero.git`
 
+## Functionality
+- Processing transactions from a csv file
+- Processing unprocessed transactions in the transaction tbl
+- Generate a csv report of processed transactions
+
+There's 3 separate scripts for each functionality
+
 ## Setup
 Run the command to bring up docker postgres db
 
