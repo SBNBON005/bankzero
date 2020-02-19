@@ -7,7 +7,7 @@ Clone and change directory to bankzero `git@github.com:SBNBON005/bankzero.git`
 Run the command to bring up docker postgres db
 
 ```
-$ docker run --rm  -p 5432:5431 --name some-postgres -e POSTGRES_PASSWORD=test -e POSTGRES_USER=proxyuser -e POSTGRES_DB=bankzero postgres:alpine
+$ docker run --rm  -p 5432:5432 --name some-postgres -e POSTGRES_PASSWORD=test -e POSTGRES_USER=proxyuser -e POSTGRES_DB=bankzero postgres:alpine
 ```
 
 Install requirements and building module
