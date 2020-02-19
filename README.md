@@ -1,7 +1,7 @@
 ## Prerequisites
-python 3.8
-Install `Docker`
-Clone and change directory to bankzero `git@github.com:SBNBON005/bankzero.git`
+- python 3.8
+- Install `Docker`
+- Clone and change directory to bankzero `git@github.com:SBNBON005/bankzero.git`
 
 ## Setup
 Run the command to bring up docker postgres db
