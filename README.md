@@ -45,6 +45,50 @@ $ python3.8 bankzero/process_pending_txs.py
 $ python3.8 bankzero/generate_report.py
 ```
 
+## How to interact with the database
+
+Run docker ps on your terminal to get the container id for your postgres db container.
+My output
+```
+$ docker ps
+CONTAINER ID        IMAGE                         COMMAND                  CREATED             STATUS              PORTS                               NAMES
+7feb3a98cbc9        postgres:alpine               "docker-entrypoint.s…"   7 seconds ago       Up 6 seconds        0.0.0.0:5432->5432/tcp              some-postgres
+```
+
+Jump into the container
+```
+$ docker exec -it 7feb3a98cbc9 bash
+bash-5.0#
+```
+
+Login to Database
+```
+bash-5.0# psql -U proxyuser -d bankzero
+psql (12.1)
+Type "help" for help.
+
+bankzero=#
+```
+
+Running a sql query
+```
+bankzero=# select * from transaction;
+ id |     created_at      |         updated_at         |  description   |   type    |  status   |          amount           | account_id
+----+---------------------+----------------------------+----------------+-----------+-----------+---------------------------+-------------
+  1 | 2020-01-02 10:00:00 | 2020-01-02 10:00:00        | transafer      | DEPOSIT   | PENDING   | 100000.000000000000000000 | 11111111111
+  2 | 2020-01-02 10:01:00 | 2020-01-02 10:01:00        | Computer Mania | PURCHASE  | PENDING   |     10.430000000000000000 | 11111111111
+  3 | 2020-01-02 10:01:00 | 2020-01-02 10:01:00        | Computer Mania | DRAW_CASH | PENDING   |     20.000000000000000000 | 11111111111
+  4 | 2020-01-02 10:01:00 | 2020-01-02 10:01:00        | Computer Mania | PURCHASE  | PENDING   |     20.000000000000000000 | 11111111111
+  5 | 2020-01-02 10:00:00 | 2020-02-20 10:38:27.948621 | transafer      | DEPOSIT   | PROCESSED | 100000.000000000000000000 | 11111111111
+  6 | 2020-01-02 10:01:00 | 2020-02-20 10:38:27.970594 | Computer Mania | PURCHASE  | PROCESSED |     10.430000000000000000 | 11111111111
+  7 | 2020-01-02 10:01:00 | 2020-02-20 10:38:27.993417 | Computer Mania | DRAW_CASH | PROCESSED |     20.000000000000000000 | 11111111111
+  8 | 2020-01-02 10:01:00 | 2020-02-20 10:38:28.01382  | Computer Mania | PURCHASE  | PROCESSED |     20.000000000000000000 | 11111111111
+(8 rows)
+
+bankzero=#
+```
+
+
 
 ## Approach
 - Have 3 tables Transaction, TransactionAudit and Account (defined in model.py)
