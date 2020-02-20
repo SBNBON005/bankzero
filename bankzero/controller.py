@@ -45,7 +45,7 @@ def add_txs_to_report(file_writer, txs):
     file_writer.writerow(['Account ID', 'Transaction Type', 'Transaction Amount',
                           'Account Balance Before', 'Account Balance After'])
 
-    for c, tx in enumerate(txs):
+    for tx in txs:
         file_writer.writerow([tx.transaction.account.id,
                               tx.transaction.type.name,
                               tx.transaction.amount,
