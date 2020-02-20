@@ -37,7 +37,7 @@ def add_account_balance_to_report(file_writer, accounts):
     file_writer.writerow(['Account ID', 'Closing Balance'])
     for account in accounts:
         file_writer.writerow([account.id, account.balance])
-        file_writer.writerow(["", ""])
+        file_writer.writerow([])
 
 
 def add_txs_to_report(file_writer, txs):
